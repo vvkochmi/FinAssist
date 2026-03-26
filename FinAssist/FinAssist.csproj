@@ -59,6 +59,13 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
+		<PackageReference Include="ScottPlot.Maui" Version="5.1.57" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="DemandCurvePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

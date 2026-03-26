@@ -19,6 +19,8 @@
                 CounterBtn.Text = $"Clicked {count} times";
 
             SemanticScreenReader.Announce(CounterBtn.Text);
+
+            Navigation.PushAsync(new DemandCurvePage()); //Вызов страницы кривой спроса
         }
     }
 }

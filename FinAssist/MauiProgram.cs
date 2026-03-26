@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using ScottPlot.Maui;
 
 namespace FinAssist
 {
@@ -9,6 +10,7 @@ namespace FinAssist
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseScottPlot() //Добавлено для вывода графика
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
