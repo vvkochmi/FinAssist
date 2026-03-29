@@ -3,24 +3,48 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ScottPlot="clr-namespace:ScottPlot.Maui;assembly=ScottPlot.Maui"
              x:Class="FinAssist.DemandCurvePage">
-    <ScrollView>
-        <VerticalStackLayout x:Name="StackLay">
-            <Label 
-                Text="Welcome to .NET MAUI!"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
-
-            <Label 
-                Text="Тест"/>
-
-            <Button Text="Кнопка"/>
-
-            <Grid 
-                HeightRequest="350"
-                WidthRequest="350">
-                <ScottPlot:MauiPlot 
-                    x:Name="Plot1" />
+    <ScrollView>        
+        <VerticalStackLayout Spacing="25" Padding="20">
+            <HorizontalStackLayout Spacing="25">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Цена" 
+                           FontAttributes="Bold"/>
+                    <Entry x:Name="PriceEntry" 
+                           Placeholder="Введите цену" 
+                           Keyboard="Numeric"
+                           TextChanged="PriceDemandEntry_TextChanged"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Количество" 
+                           FontAttributes="Bold"/>
+                    <Entry x:Name="CountEntry"
+                           Placeholder="Введите количество" 
+                           Keyboard="Numeric"
+                           TextChanged="PriceCountEntry_TextChanged"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+            <Grid HeightRequest="350"
+                  WidthRequest="350">
+                <ScottPlot:MauiPlot x:Name="Plot1" />
             </Grid>
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Вкусы и предпочтения покупателей" 
+                       FontAttributes="Bold"/>
+                <Slider x:Name="TastesSlider"
+                        Minimum="-2"
+                        Maximum="2"
+                        Value="0"
+                        MinimumTrackColor="Blue"
+                        MaximumTrackColor="LightGray"/>
+                <Label Text="Размер дохода потребителей" 
+                       FontAttributes="Bold"/>
+                <Slider x:Name="IncomeSlider"
+                        Minimum="-2"
+                        Maximum="2"
+                        Value="0"
+                        MinimumTrackColor="Green"
+                        MaximumTrackColor="LightGray"/>
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 
