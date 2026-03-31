@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace FinAssist
+﻿namespace FinAssist
 {
     public partial class App : Application
     {

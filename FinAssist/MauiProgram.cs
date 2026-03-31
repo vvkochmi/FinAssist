@@ -1,5 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
-using ScottPlot.Maui;
+﻿using LiveChartsCore.SkiaSharpView.Maui;
+using Microsoft.Extensions.Logging;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace FinAssist
 {
@@ -9,8 +10,9 @@ namespace FinAssist
         {
             var builder = MauiApp.CreateBuilder();
             builder
+                .UseSkiaSharp()//График SciaSharp
+                .UseLiveCharts()
                 .UseMauiApp<App>()
-                .UseScottPlot() //Добавлено для вывода графика
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -18,7 +20,7 @@ namespace FinAssist
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
