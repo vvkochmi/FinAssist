@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinAssist.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Button
+                x:Name="CounterBtn"
+                Text="Кривая спроса" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Fill"
+                Command="{Binding NavigateCommand}"/>
+            <HorizontalStackLayout Spacing="25">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Цена" 
+                FontAttributes="Bold"/>
+                    <Entry x:Name="PriceEntry" 
+                Placeholder="Введите цену" 
+                Keyboard="Numeric"
+                Text="{Binding Price}"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Количество" 
+                FontAttributes="Bold"/>
+                    <Entry x:Name="CountEntry"
+                Placeholder="Введите количество" 
+                Keyboard="Numeric"
+                Text="{Binding ProductCount}"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -12,7 +12,7 @@
                     <Entry x:Name="PriceEntry" 
                            Placeholder="Введите цену" 
                            Keyboard="Numeric"
-                           Text="{Binding X}"/>
+                           Text="{Binding Y}"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout Spacing="5">
                     <Label Text="Количество" 
@@ -20,14 +20,11 @@
                     <Entry x:Name="CountEntry"
                            Placeholder="Введите количество" 
                            Keyboard="Numeric"
-                           Text="{Binding Y}"/>
+                           Text="{Binding X}"/>
                 </VerticalStackLayout>
             </HorizontalStackLayout>
-
-            <Button Text="Построить график" Command="{Binding BuildDemandCommand}" />
-            
-            <Grid HeightRequest="350"
-                  WidthRequest="350">
+            <Grid HeightRequest="950"
+                  WidthRequest="950">
                 <lvc:CartesianChart x:Name="DemandChart"
                                     Series="{Binding DemandData}">
                 </lvc:CartesianChart>
@@ -37,17 +34,17 @@
                 <Label Text="Вкусы и предпочтения покупателей" 
                        FontAttributes="Bold"/>
                 <Slider x:Name="TastesSlider"
-                        Minimum="-2"
-                        Maximum="2"
-                        Value="0"
+                        Minimum="0.95"
+                        Maximum="1.05"
+                        Value="{Binding SliderPrefValue}"
                         MinimumTrackColor="Blue"
                         MaximumTrackColor="LightGray"/>
                 <Label Text="Размер дохода потребителей" 
                        FontAttributes="Bold"/>
                 <Slider x:Name="IncomeSlider"
-                        Minimum="-2"
-                        Maximum="2"
-                        Value="0"
+                        Minimum="0.95"
+                        Maximum="1.05"
+                        Value="{Binding SliderIncValue}"
                         MinimumTrackColor="Green"
                         MaximumTrackColor="LightGray"/>
             </VerticalStackLayout>
